@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 
 namespace _02._Car_Race
@@ -32,11 +32,11 @@ namespace _02._Car_Race
 
             if (leftTime < rightTime)
             {
-                Console.WriteLine($"The winner is left with total time: {Math.Round(leftTime,1)}");
+                Console.WriteLine($"The winner is left with total time: {Math.Round(leftTime, 1)}");
             }
             else
             {
-                Console.WriteLine($"The winner is right with total time: {rightTime}");
+                Console.WriteLine($"The winner is right with total time: {Math.Round(rightTime, 1)}");
             }
 
         }
