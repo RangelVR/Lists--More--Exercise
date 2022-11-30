@@ -30,7 +30,7 @@ namespace _04._Mixed_up_Lists
                 list1.Sort();
                 foreach (var num in mixList)
                 {
-                    if (num > list1[list1.Count - 2] && num  < list1[list1.Count - 1])
+                    if (num > list1[list1.Count - 2] && num < list1[list1.Count - 1])
                     {
                         Console.Write(num + " ");
                     }
