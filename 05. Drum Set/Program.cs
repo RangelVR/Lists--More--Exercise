@@ -10,7 +10,7 @@ namespace _05._Drum_Set
         {
             double savings = double.Parse(Console.ReadLine());
             List<int> drumSet = Console.ReadLine().Split().Select(int.Parse).ToList();
-            List<int> referenceList = new List<int> (drumSet);
+            List<int> initialList = new List<int> (drumSet);
             string command;
 
             while ((command = Console.ReadLine()) != "Hit it again, Gabsy!")
@@ -22,15 +22,15 @@ namespace _05._Drum_Set
 
                     if (drumSet[i] <= 0)
                     {
-                        if (savings - referenceList[i] * 3 >= 0)
+                        if (savings - initialList[i] * 3 >= 0)
                         {
-                            drumSet[i] = referenceList[i];
-                            savings -= referenceList[i] * 3;
+                            drumSet[i] = initialList[i];
+                            savings -= initialList[i] * 3;
                         }
                         else
                         {
                             drumSet.RemoveAt(i);
-                            referenceList.RemoveAt(i);
+                            initialList.RemoveAt(i);
                             if (i != drumSet.Count)
                             {
                                 i--;
