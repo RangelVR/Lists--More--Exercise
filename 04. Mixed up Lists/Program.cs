@@ -35,7 +35,6 @@ for (int i = secondtList.Count - 1; i >= secondListCount - minLength; i--)
     secondtList.RemoveAt(i);
 }
 
-
 List<int> boundraries = new List<int>();
 
 if (firstList.Count > secondtList.Count)
