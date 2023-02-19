@@ -52,3 +52,48 @@ namespace _04._Mixed_up_Lists
         }
     }
 }
+--------------------------------------------------
+//List<int> firstList = Console.ReadLine().Split().Select(int.Parse).ToList();
+//List<int> secondtList = Console.ReadLine().Split().Select(int.Parse).ToList();
+
+//List<int> mixedList = new List<int>();
+
+//int minLength = Math.Min(firstList.Count, secondtList.Count);
+
+//for (int i = 0; i < minLength; i++)
+//{
+//    mixedList.Add(firstList[i]);
+//    mixedList.Add(secondtList[secondtList.Count- 1 - i]);
+//}
+
+//for (int i = 0; i < minLength; i++)
+//{
+//    firstList.RemoveAt(0);
+//}
+
+//int secondListCount = secondtList.Count;
+//for (int i = secondtList.Count - 1; i >= secondListCount - minLength; i--)
+//{
+//    secondtList.RemoveAt(i);
+//}
+
+//List<int> boundraries = new List<int>();
+
+//if (firstList.Count > secondtList.Count)
+//{
+//    boundraries = firstList.OrderBy(x => x).ToList();
+//}
+//else
+//{
+//    boundraries = secondtList.OrderBy(x => x).ToList();
+//}
+
+//int minValue = boundraries[0];
+//int maxValue = boundraries[1];
+
+//List<int> resultList = mixedList
+//    .Where(x => x > minValue && x < maxValue)
+//    .OrderBy(x => x)
+//    .ToList();
+
+//Console.WriteLine(string.Join(" ", resultList));
