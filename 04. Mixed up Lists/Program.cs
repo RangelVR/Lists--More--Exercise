@@ -12,28 +12,28 @@ for (int i = 0; i < minLength; i++)
     mixedList.Add(secondtList[secondtList.Count - 1 - i]);
 }
 
-//if (firstList.Count > secondtList.Count)
-//{
-//    firstList.RemoveRange(0, secondtList.Count);
-//    secondtList.RemoveRange(0, secondtList.Count);
-//}
-//else
-//{
-//    secondtList.RemoveRange(2, firstList.Count);
-//    firstList.RemoveRange(0, firstList.Count);
-//}
-
-for (int i = 0; i < minLength; i++)
+if (firstList.Count > secondtList.Count)
 {
-    firstList.RemoveAt(0);
+    firstList.RemoveRange(0, secondtList.Count);
+    secondtList.Clear();
+}
+else
+{
+    secondtList.RemoveRange(2, firstList.Count);
+    firstList.Clear();
 }
 
-int secondListCount = secondtList.Count;
+//for (int i = 0; i < minLength; i++)
+//{
+//    firstList.RemoveAt(0);
+//}
 
-for (int i = secondtList.Count - 1; i >= secondListCount - minLength; i--)
-{
-    secondtList.RemoveAt(i);
-}
+//int secondListCount = secondtList.Count;
+
+//for (int i = secondtList.Count - 1; i >= secondListCount - minLength; i--)
+//{
+//    secondtList.RemoveAt(i);
+//}
 
 List<int> boundraries = new List<int>();
 
@@ -55,6 +55,7 @@ List<int> resultList = mixedList
     .ToList();
 
 Console.WriteLine(string.Join(" ", resultList));
+
 ---------------------------------------------------------------------------
 //namespace _04._Mixed_up_Lists
 //{
