@@ -5,7 +5,6 @@ string command = Console.ReadLine();
 
 while (command != "Hit it again, Gabsy!")
 {
-
     int hitPower = int.Parse(command);
 
     for (int i = 0; i < currDrumSet.Count; i++)
