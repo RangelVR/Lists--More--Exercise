@@ -1,46 +1,38 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+double savings = double.Parse(Console.ReadLine());
+List<int> drumSetOrigin = Console.ReadLine().Split().Select(int.Parse).ToList();
+List<int> currDrumSet = new List<int>(drumSetOrigin);
+string command = Console.ReadLine();
 
-namespace _05._Drum_Set
+while (command != "Hit it again, Gabsy!")
 {
-    class Program
+
+    int hitPower = int.Parse(command);
+
+    for (int i = 0; i < currDrumSet.Count; i++)
     {
-        static void Main(string[] args)
+        currDrumSet[i] -= hitPower;
+
+        if (currDrumSet[i] <= 0)
         {
-            double savings = double.Parse(Console.ReadLine());
-            List<int> drumSet = Console.ReadLine().Split().Select(int.Parse).ToList();
-            List<int> initialList = new List<int> (drumSet);
-            string command;
+            int priceToReplace = drumSetOrigin[i] * 3;
 
-            while ((command = Console.ReadLine()) != "Hit it again, Gabsy!")
+            if (savings - priceToReplace < 0 )
             {
-                int power = int.Parse(command);
-                for (int i = 0; i < drumSet.Count; i++)
-                {
-                    drumSet[i] -= power;
-
-                    if (drumSet[i] <= 0)
-                    {
-                        if (savings - initialList[i] * 3 >= 0)
-                        {
-                            drumSet[i] = initialList[i];
-                            savings -= initialList[i] * 3;
-                        }
-                        else
-                        {
-                            drumSet.RemoveAt(i);
-                            initialList.RemoveAt(i);
-                            if (i != drumSet.Count)
-                            {
-                                i--;
-                            }
-                        }
-                    }
-                }
+                currDrumSet.RemoveAt(i);
+                drumSetOrigin.RemoveAt(i);
+                i--;
+                continue;
             }
-            Console.WriteLine(string.Join(" ", drumSet));
-            Console.WriteLine($"Gabsy has {savings:f2}lv.");
+            else
+            {
+                savings -= (drumSetOrigin[i] * 3);
+                currDrumSet[i] = drumSetOrigin[i];
+            }
         }
     }
+
+    command = Console.ReadLine();
 }
+
+Console.WriteLine(string.Join(" ", currDrumSet));
+Console.WriteLine($"Gabsy has {savings:f2}lv.");
